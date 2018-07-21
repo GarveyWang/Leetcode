@@ -1,30 +1,31 @@
 package Leetcode;
 
+
 import java.util.HashMap;
-import java.util.Map;
 
 public class WordPattern {
     public static boolean wordPattern(String pattern, String str) {
-        String[] strs=str.split(" ");
-        if(pattern.length()!=strs.length){
+        String[] strs = str.split(" ");
+        if(strs.length!=pattern.length()){
             return false;
         }
-        HashMap<String,Character> str2charMap=new HashMap<>();
-        HashMap<Character,String> char2strMap=new HashMap<>();
+        HashMap<Character,String>map = new HashMap<>();
         for (int i=0;i<pattern.length();++i){
-            if(str2charMap.containsKey(strs[i])&&char2strMap.containsKey(pattern.charAt(i))){
-                if((str2charMap.get(strs[i])==pattern.charAt(i))&&(char2strMap.get(pattern.charAt(i)).equals(strs[i]))){
-                    continue;
-                }else {
+            if(map.containsKey(pattern.charAt(i))){
+                if(!map.get(pattern.charAt(i)).equals(strs[i])){
                     return false;
                 }
-            }else if ((!str2charMap.containsKey(strs[i]))&&(!char2strMap.containsKey(pattern.charAt(i)))){
-                str2charMap.put(strs[i],pattern.charAt(i));
-                char2strMap.put(pattern.charAt(i),strs[i]);
-            }else {
-                return false;
+            }else{
+                if(map.containsValue(strs[i])){
+                    return false;
+                }
+                map.put(pattern.charAt(i),strs[i]);
             }
         }
         return true;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(wordPattern("abba","dog dog dog dog"));
     }
 }

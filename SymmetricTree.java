@@ -2,7 +2,10 @@ package Leetcode;
 
 public class SymmetricTree {
     public boolean isSymmetric(TreeNode root) {
-        return isMirror(root, root);
+        if(root==null){
+            return true;
+        }
+        return isMirror(root.left, root.right);
     }
 
     public boolean isMirror(TreeNode t1, TreeNode t2) {

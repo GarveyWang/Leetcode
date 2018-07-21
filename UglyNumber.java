@@ -2,7 +2,7 @@ package Leetcode;
 
 public class UglyNumber {
     public boolean isUgly(int num) {
-        if (num==0){
+        if (num<=0){
             return false;
         }
         if (num==1){
@@ -17,7 +17,7 @@ public class UglyNumber {
         while (num%5==0){
             num/=5;
         }
-        return (num==0)?true:false;
+        return num==1;
 
     }
 }

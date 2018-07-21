@@ -1,17 +1,26 @@
 package Leetcode;
 
+import java.util.HashMap;
+
 public class ValidAnagram {
     public boolean isAnagram(String s, String t) {
-        if (s.length()!=t.length()){
-            return false;
+        HashMap<Character,Integer> hashMap = new HashMap<>();
+        for (Character ch:s.toCharArray()){
+            if (hashMap.containsKey(ch)){
+                hashMap.put(ch,hashMap.get(ch)+1);
+            }else {
+                hashMap.put(ch,1);
+            }
         }
-        int[] table=new int[26];
-        for (int i=0;i<s.length();++i){
-            table[s.charAt(i)-'a']++;
-            table[t.charAt(i)-'a']--;
+        for (Character ch:t.toCharArray()){
+            if(hashMap.containsKey(ch)){
+                hashMap.put(ch,hashMap.get(ch)-1);
+            }else{
+                return false;
+            }
         }
-        for (int i=0;i<26;++i){
-            if (table[i]<0){
+        for (Character ch:hashMap.keySet()){
+            if(hashMap.get(ch)!=0){
                 return false;
             }
         }

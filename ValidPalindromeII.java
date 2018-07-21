@@ -2,32 +2,25 @@ package Leetcode;
 
 public class ValidPalindromeII {
     public boolean validPalindrome(String s) {
-        int left=0;
-        int right=s.length()-1;
-        while (left<=right){
-            if (s.charAt(left)==s.charAt(right)){
-                ++left;
-                --right;
-            }else {
-                if (isValid(s,left,right-1)||isValid(s,left+1,right)){
-                    return true;
-                }else {
-                    return false;
-                }
+        int start = 0;
+        int end = s.length()-1;
+        while (start<end){
+            if(s.charAt(start)!=s.charAt(end)){
+                return isValid(s,start+1,end)||isValid(s,start,end-1);
             }
+            ++start;
+            --end;
         }
         return true;
-
     }
 
     public boolean isValid(String s,int left,int right){
-        while (left<=right){
-            if (s.charAt(left)==s.charAt(right)){
-                left++;
-                right--;
-            }else {
+        while (left<right){
+            if (s.charAt(left)!=s.charAt(right)){
                 return false;
             }
+            ++left;
+            --right;
         }
         return true;
     }
