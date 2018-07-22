@@ -1,4 +1,4 @@
-package Leetcode;
+package Leetcode.Array;
 
 public class UniquePathsII {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {

@@ -2,15 +2,6 @@ package Leetcode;
 
 import java.util.HashSet;
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode(int x) {
-        val = x;
-    }
-}
-
 public class TwoSumIV {
     public boolean findTarget(TreeNode root, int k) {
         HashSet<Integer>set = new HashSet<>();

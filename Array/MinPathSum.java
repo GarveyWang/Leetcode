@@ -1,4 +1,4 @@
-package Leetcode;
+package Leetcode.Array;
 
 public class MinPathSum {
     public int minPathSum(int[][] grid) {

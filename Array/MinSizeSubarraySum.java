@@ -1,4 +1,4 @@
-package Leetcode;
+package Leetcode.Array;
 
 public class MinSizeSubarraySum {
     public int minSubArrayLen(int s, int[] nums) {

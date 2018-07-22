@@ -1,4 +1,4 @@
-package Leetcode;
+package Leetcode.Array;
 
 public class SearchInsertPosition {
     public int searchInsert(int[] nums, int target) {

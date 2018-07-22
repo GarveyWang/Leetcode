@@ -1,4 +1,4 @@
-package Leetcode;
+package Leetcode.Array;
 
 public class SpiralMatrixII {
     public int[][] generateMatrix(int n) {

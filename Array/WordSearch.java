@@ -1,4 +1,4 @@
-package Leetcode;
+package Leetcode.Array;
 
 public class WordSearch {
     public boolean exist(char[][] board, String word) {

@@ -1,4 +1,4 @@
-package Leetcode;
+package Leetcode.Array;
 
 public class SearchA2DMatrix {
     public static boolean searchMatrix(int[][] matrix, int target) {

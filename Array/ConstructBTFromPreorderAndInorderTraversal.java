@@ -1,4 +1,6 @@
-package Leetcode;
+package Leetcode.Array;
+
+import Leetcode.TreeNode;
 
 import java.util.Arrays;
 
